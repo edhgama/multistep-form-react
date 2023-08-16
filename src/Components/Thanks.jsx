@@ -8,7 +8,7 @@ import {
 import "./thanks.css";
 
 
-export default function Thanks() {
+export default function Thanks({data}) {
 
   return (
     <div className="thanks-container">

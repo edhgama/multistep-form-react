@@ -1,4 +1,6 @@
-// import { useState } from 'react'
+ 
+
+import { useState } from 'react'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import { FiSend } from 'react-icons/fi'
 
@@ -14,12 +16,31 @@ import { useForm } from './Hooks/useForm'
 //css
 import './App.css'
 
+const formTemplate = {
+  name: "",
+  email: "",
+  review: "",
+  comment: ""
+}
 
 function App() {
+  const [data, setData] = useState(formTemplate)
 
-  // eslint-disable-next-line react/jsx-key
-  const formComponents = [<UserForm />, <ReviewForm />, <Thanks />]
+  const updateFieldHandler = (key, value) => {
+    setData((prev) => {
+      return {...prev, [key]: value }
+    });
+  };
+
+
+
+     
+  const formComponents = [
+    <UserForm data={data} updateFieldHandler={updateFieldHandler} />,
+    <ReviewForm data={data} updateFieldHandler={updateFieldHandler} />,
+    <Thanks data={data}  />]
   const { currentStep, currentComponentForm, changeStep, isLastStep, isFirstStep } = useForm(formComponents)
+
 
 
   return (
@@ -37,16 +58,16 @@ function App() {
           <div className="actions">
             {!isFirstStep &&
               (<button type='button' onClick={() => changeStep(currentStep - 1)}>
-               
+
                 <span> <GrFormPrevious />Voltar</span>
               </button>)}
             {!isLastStep ? (<button type='submit'>
               <span>Avançar<GrFormNext /></span>
-              
+
             </button>) :
               (<button type='submit'>
                 <span>Enviar<FiSend /></span>
-                
+
               </button>
               )}
           </div>
