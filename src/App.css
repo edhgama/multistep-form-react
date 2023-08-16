@@ -60,13 +60,14 @@ textarea{
 .actions {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap:1rem;
 }
 
 .actions button {
   font-size: .9rem;
   padding: .5rem 1rem;
-  display: flex;
+  display: flex; 
   gap: .5rem;
   align-items: center;
   background-color: #dfdfdf;
@@ -78,6 +79,4 @@ textarea{
 
 .actions button:hover {
   background-color: #cfcfcf;
-}
-
 }

@@ -1,18 +1,23 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import { FiSend } from 'react-icons/fi'
-import './App.css'
 
+//comps
 import UserForm from './Components/UserForm'
 import ReviewForm from './Components/ReviewForm'
 import Thanks from './Components/Thanks'
+import Steps from './Components/Steps'
 
 //hooks
-
 import { useForm } from './Hooks/useForm'
+
+//css
+import './App.css'
+
 
 function App() {
 
+  // eslint-disable-next-line react/jsx-key
   const formComponents = [<UserForm />, <ReviewForm />, <Thanks />]
   const { currentStep, currentComponentForm, changeStep, isLastStep, isFirstStep } = useForm(formComponents)
 
@@ -26,22 +31,22 @@ function App() {
         </p>
       </div>
       <div className="form-container">
-        <p>etapas</p>
+        <Steps currentStep={currentStep} />
         <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
           <div className="inputs-container"> {currentComponentForm} </div>
           <div className="actions">
             {!isFirstStep &&
               (<button type='button' onClick={() => changeStep(currentStep - 1)}>
-                <GrFormPrevious />
-                <span>Voltar</span>
+               
+                <span> <GrFormPrevious />Voltar</span>
               </button>)}
             {!isLastStep ? (<button type='submit'>
-              <span>Avançar</span>
-              <GrFormNext />
+              <span>Avançar<GrFormNext /></span>
+              
             </button>) :
               (<button type='submit'>
-                <span>Enviar</span>
-                <FiSend />
+                <span>Enviar<FiSend /></span>
+                
               </button>
               )}
           </div>
