@@ -16,6 +16,7 @@
 
 .form-container{
   max-width: 60%;
+  min-width: 500px;
   margin: 0 auto;
   background-color: #fff;
   padding: 1.5rem;
@@ -60,8 +61,8 @@ textarea{
 .actions {
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;
   gap:1rem;
+  margin-top: 2rem;
 }
 
 .actions button {
