@@ -13,33 +13,33 @@ export default function ReviewForm({ data, updateFieldHandler }) {
     <div className="review-form">
       <div className="form-control score-container">
         <label className="radio-container">
-          <input type='radio' value='unsatisfied' name='review' required
-            checked={data.review === 'unsatisfied'}
+          <input type='radio' value='Insatisfeito' name='review' required
+            checked={data.review === 'Insatisfeito'}
             onChange={(e) => updateFieldHandler("review", e.target.value)}
           />
-          <BsFillEmojiNeutralFill />
-          <p>Instatisfeito</p>
+          <BsEmojiFrownFill />
+          <p>Insatisfeito</p>
         </label>
         <label className="radio-container">
-          <input type='radio' value='neutral' name='review' required
-            checked={data.review === 'neutral'}
+          <input type='radio' value='Neutro' name='review' required
+            checked={data.review === 'Neutro'}
             onChange={(e) => updateFieldHandler("review", e.target.value)} />
-          <BsEmojiFrownFill />
+          <BsFillEmojiNeutralFill />
           <p>Neutro</p>
         </label>
         <label className="radio-container">
-          <input type='radio' value='sastified' name='review' required
-            checked={data.review === 'sastified'}
+          <input type='radio' value='Satisfeito' name='review' required
+            checked={data.review === 'Satisfeito'}
             onChange={(e) => updateFieldHandler("review", e.target.value)} />
           <BsFillEmojiSmileFill />
           <p>Satisfeito</p>
         </label>
         <label className="radio-container">
-          <input type='radio' value='very_satisfied' name='review' required
-            checked={data.review === 'very_satisfied'}
+          <input type='radio' value='Muito Satisfeito' name='review' required
+            checked={data.review === 'Muito Satisfeito'}
             onChange={(e) => updateFieldHandler("review", e.target.value)} />
           <BsEmojiHeartEyesFill />
-          <p>Instatisfeito</p>
+          <p>Muito Satisfeito</p>
         </label>
       </div>
       <div className="form-control">

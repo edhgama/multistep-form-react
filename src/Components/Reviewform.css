@@ -4,6 +4,13 @@
   justify-content: center;
 }
 
+.form-control textarea{
+  margin: auto;
+  width: 90%;
+  min-height: 3.5rem;
+  max-height: 7.5rem;
+}
+
 .score-container svg{
   font-size: 1.6rem;
   cursor:pointer;
